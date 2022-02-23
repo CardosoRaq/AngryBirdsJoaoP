@@ -1,8 +1,9 @@
+//const de constante
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
 
-var engine, world, canvas;
+var engine, world;
 var ground;
 var caixa;
 var passaro;
@@ -13,15 +14,19 @@ function setup(){
     engine = Engine.create();
     world = engine.world;
 
-    ground = Bodies.rectangle(600,390,1200,10,{isStatic: true});
+     
+       
+
+
+    ground = Bodies.rectangle(200,390,1200,10,{isStatic: true});
     World.add(world,ground);
 
-    caixa = new Caixa (600,300,50,50);
+    caixa = new Caixa (600,300,50,50)
 
-    passaro = new Passaro_maneiro(250,250);
+    passaro = new Passaro_maneiro (250,250);
 
-    tronco = new Tronco(600,200,75, PI/2);
-
+    tronco = new Tronco(600, 200, 75, PI/2);
+    
 }
 
 function draw(){
@@ -29,9 +34,10 @@ function draw(){
     Engine.update(engine);
 
     caixa.display();
+    
     passaro.display();
-    tronco.display();
 
+    tronco.display();
 
     rectMode(CENTER);
     fill("brown")
